@@ -8,10 +8,24 @@ output: html_document
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+```{r final-exercise}
+library('dplyr')
+three_countries = c('Togo','Taiwan','Sweden')
+gap <- read.table('output/combined_gapMinder.tsv', sep = '\t',  header = TRUE)
+
+togo <- subset(gap, country == 'Togo')
+plot(togo[,2],togo[,6])
+
+taiwan <- subset(gap, country == 'Taiwan')
+plot(taiwan[,2],taiwan[,6])
+
+sweden <- subset(gap, country == 'Sweden')
+plot(sweden[,2],sweden[,6])
+
+```
 
 ```{r read-in-data}
 gap <- read.table('output/combined_gapMinder.tsv', sep = '\t',  header = TRUE)
-library('dplyr')
 gap %>%
   select(year,pop,country,continent) %>%
   filter(year == 2002) %>%
