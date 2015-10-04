@@ -22,7 +22,15 @@ plot(taiwan[,2],taiwan[,6])
 sweden <- subset(gap, country == 'Sweden')
 plot(sweden[,2],sweden[,6])
 
+
 ```
+
+We see that `r togo[1,1]` has a minimum life expectancy of `r min(togo[,5])`, a max of `r max(togo[,5])`, and an overall average of `r mean(togo[,5])`
+
+We see that `r taiwan[1,1]` has a minimum life expectancy of `r min(taiwan[,5])`, a max of `r max(taiwan[,5])`, and an overall average of `r mean(taiwan[,5])`
+
+We see that `r sweden[1,1]` has a minimum life expectancy of `r min(sweden[,5])`, a max of `r max(sweden[,5])`, and an overall average of `r mean(sweden[,5])`
+
 
 ```{r read-in-data}
 gap <- read.table('output/combined_gapMinder.tsv', sep = '\t',  header = TRUE)
